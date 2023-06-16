@@ -54,7 +54,7 @@ func setup() {
 		return
 	})
 
-	http.HandleFunc("/api/setdata/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/keyspeed_api/setdata/", func(w http.ResponseWriter, r *http.Request) {
 
 		fmt.Print("got post request: ")
 		util.BLogln(r.URL.Path)
@@ -88,7 +88,7 @@ func handle(path string, handler func([]string) (any, error)) {
 
 	path = strings.Trim(path, "/")
 
-	prefix := "/api/"
+	prefix := "/keyspeed_api/"
 	path = prefix + strings.Trim(path, "/") + "/"
 
 	items := strings.SplitN(path, "<", 2)
